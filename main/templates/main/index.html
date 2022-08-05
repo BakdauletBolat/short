@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            margin:0px;
+            padding: 0px;
+        }
+
+        .evrika__logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+            .shortner__container{
+                background-color: #00bccc;
+                padding:30px;
+                
+            }
+
+            .shortner__form {
+                display: flex;
+                justify-content: center;
+                max-width: 1100px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .input__form {
+                width: 100%;
+                padding: 10px 20px;
+                border:none;
+                font-size: 20px;
+                border-radius: 10px;
+            }
+
+            .input__button{
+                margin-left: 20px;
+                border:none;
+                border-radius: 10px;
+                background-color: white;
+                font-size: 20px;
+                padding: 10px 20px;
+            }
+
+            .container{
+                padding-top: 40px;
+                display: flex;
+                max-width: 1100px;
+                width: 100%;
+                font-size: 20px;
+                margin: 0 auto;
+            }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="evrika__logo">
+       <svg width="259" height="42" viewBox="0 0 125 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M77.1756 3.36856L72.1807 6.48663L73.2202 0.250488H77.6953L77.1756 3.36856Z" fill="#F25529"/>
+<path d="M74.4527 19.7466L76.8581 5.26709L71.8443 8.51601L69.9775 19.7466H74.4527Z" fill="#029AAD"/>
+<path d="M18.6352 19.7468H3.18492C0.77308 19.7468 -0.301316 19.0841 0.0726631 16.8458L2.37358 2.99269C2.47196 2.2164 2.87943 1.49561 3.52403 0.957587C4.1579 0.456468 5.14039 0.203125 6.49685 0.203125H21.5922L19.6906 3.13467H8.41744C7.37791 3.13467 6.78209 3.41307 6.62045 4.36241L6.11019 7.44707L5.95807 8.30733H18.198L16.2171 11.2389H5.46682L4.71253 15.7573H4.72838C4.68054 15.8994 4.67255 16.0496 4.70511 16.1951C4.73768 16.3404 4.80981 16.4769 4.91536 16.5924C5.1034 16.7502 5.60416 16.8291 6.41761 16.8291H20.6035L18.6352 19.7468Z" fill="#029AAD"/>
+<path d="M51.2221 10.0029H60.5208C61.6967 10.0029 62.5587 9.72448 63.1038 9.13706C63.5454 8.66935 63.8761 7.77569 64.0958 6.45608C64.3177 5.11419 64.1846 4.21218 63.6964 3.74725C63.2844 3.35749 62.4858 3.15984 61.2847 3.15984H54.0238C52.9525 3.15984 52.2837 3.60805 52.1221 4.55183L51.2221 10.0029ZM50.7815 12.6477L49.5962 19.7747H45.118L47.8182 3.54959C48.1922 1.29455 49.6152 0.225504 52.2046 0.225504H63.4714C68.273 0.225504 69.3696 2.52229 68.7388 6.3141C68.1683 9.71056 66.6408 12.7368 62.1689 12.7368H59.1168L59.0947 12.8788L66.9736 19.7747H61.3417L54.591 13.4355C53.6688 12.5057 52.8384 12.6477 50.7879 12.6477H50.7815ZM47.3492 0.208799L35.797 17.8732C35.3969 18.537 34.7919 19.0884 34.0514 19.4641C33.3109 19.8398 32.4649 20.0246 31.6104 19.9974C29.7533 19.9974 28.5911 19.2894 28.1241 17.8732L22.4385 0.208799H27.2939L31.7625 15.9912C31.9685 16.6315 32.4693 16.4645 32.7799 15.9912L42.4969 0.208799H47.3492ZM99.0088 19.7607H93.3389L84.8168 12.244C83.1053 10.7406 83.4729 8.8169 85.2604 7.52513L95.472 0.208799H101.002L89.4217 8.23783C88.5755 8.8169 88.1254 9.30132 88.0589 9.69108C87.9702 10.2312 88.3315 10.8437 89.1428 11.5341L99.0088 19.7607ZM83.0578 19.7607H78.5764L81.8313 0.208799H86.3094L83.0578 19.7607ZM125 19.7607H120.288L118.665 14.8164H107.227L103.997 19.7747H99.2815L111.163 2.20771C112.263 0.590206 113.268 0 115.429 0C117.4 0 118.367 0.534527 118.966 2.20771L125 19.7607ZM117.945 12.205L115.41 4.24558C115.229 3.70549 115.049 3.43545 114.865 3.43545C114.681 3.43545 114.415 3.71384 114.054 4.24558L108.821 12.205H117.945Z" fill="#029AAD"/>
+</svg>
+    </div>
+    <div class="shortner__container">
+        <form action="{% url 'shorten_post' %}" class="shortner__form" method="post">
+            {% csrf_token %}
+            <input class="input__form" type="text" name="url">
+            <input class="input__button" type="submit" value="Short">
+        </form>
+    </div>
+
+    {% if url %}
+    <div class="container">
+        <div class="success">Ваша новая укореченная ссылка <a href="{{url}}">{{url}}</a></div>
+    </div>
+    {% endif %}
+
+    {% if error %}
+    <div class="container">
+        <div class="success">{{error}}</a></div>
+    </div>
+    {% endif %}
+</body>
+
+</html>
